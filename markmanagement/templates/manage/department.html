@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Department{% endblock title %}
+{% block content %}
+<ul> 
+    {% for object in object_list %} 
+    <li><a href="{%url 'dept_detail' object.pk%}">{{ object.name }}</a></li> 
+    <li>{{ object.hod }}</li> 
+    <hr/> 
+    {% empty %} 
+    <li>No Department.</li> 
+    {% endfor %} 
+    <a href="{%url 'add_department'%}">add</a>
+</ul>
+{% endblock content %}
