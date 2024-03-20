@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Student detail{% endblock title %}
+{% block content %}
+<ul> {{object}}
+    <a href="{%url 'stud_update' object.pk %}">Update</a>
+    <a href="{%url 'stud_delete' object.pk %}">Delete</a>
+</ul>
+{% endblock content %}

@@ -1,4 +1,5 @@
 
+from pickle import TRUE
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
@@ -34,7 +35,7 @@ class Classs(models.Model):
 class Student(User):
     rollno=models.IntegerField(primary_key=True)
     phno=models.CharField(max_length=12,unique=True)
-    class_sec=models.ForeignKey(Classs,on_delete=models.CASCADE)
+    class_sec=models.ForeignKey(Classs,on_delete=models.SET_NULL,null=True)
     class Meta:
         db_table="student"
     def __str__(self) -> str:

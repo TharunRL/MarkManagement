@@ -4,5 +4,7 @@
 <ul> 
     <li>{{ object.name }}</li> 
     <li>{{ object.hod }}</li> 
+    <a href="{%url 'dept_update' object.pk %}">Update</a>
+    <a href="{%url 'dept_delete' object.pk %}">Delete</a>
 </ul>
 {% endblock content %}
