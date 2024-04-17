@@ -80,12 +80,11 @@ WSGI_APPLICATION = 'markmanagement.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+DATABASE_DIR = os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS':{
-            'read_default_file':'/usr/local/mysql/my.cnf'
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': DATABASE_DIR,
     }
 }
 
