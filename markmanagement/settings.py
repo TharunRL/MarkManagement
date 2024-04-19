@@ -58,6 +58,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'markmanagement.urls'
+CRSF_TRUSTED_ORIGINS = ["markmanagement.azurewebsites.net"]
 
 TEMPLATES = [
     {
