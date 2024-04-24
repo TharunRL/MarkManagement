@@ -1,5 +1,5 @@
 Django
-crispy_forms
-crispy_bootstrap5
+django-crispy-forms
+crispy-bootstrap5
 mysqlclient
 whitenoise
