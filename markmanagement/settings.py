@@ -82,11 +82,14 @@ WSGI_APPLICATION = 'markmanagement.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASE_DIR = os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DATABASE_DIR,
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'b68oxiyytdiplytm6m0z',
+        'USER': 'utwdpfqrndc92od1',
+        'PASSWORD': 'xtRlMYFrrs9pHUN9er2z',
+        'HOST': 'b68oxiyytdiplytm6m0z-mysql.services.clever-cloud.com',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
