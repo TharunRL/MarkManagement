@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Add Department{% endblock title %}
-{% load crispy_forms_tags %}
 {% block content%}
     <h1>Add Department</h1>
         <form method="post">
             {% csrf_token %}
-            {{form|crispy}}
+            {{form}}
             <button type="submit" class="btn btn-success">Add</button>
         </form>
         

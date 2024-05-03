@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0a%)u0fps4d*&39n(ka1iy&)x0c2zn_ezhbunb-3y-apyy93mp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['markmanagement.azurewebsites.net','localhost']
+ALLOWED_HOSTS = ['markmanagement.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
@@ -41,11 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "accounts",
     "teachers",
-    "crispy_forms",
-    "crispy_bootstrap5"
 ]
-CRISPY_ALLOWED_TEMPLATE_PACKS="bootstrap5"
-CRISPY_TEMPLATE_PACK="bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,5 +131,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "home" 
-LOGOUT_REDIRECT_URL = "home" 
+LOGOUT_REDIRECT_URL = "home"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
