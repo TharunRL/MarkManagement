@@ -3,7 +3,7 @@
 {% block content %}
 <ul> 
     {% for object in object_list %} 
-    <li><a href="{%url 'dept_detail' object.pk%}">{{ object.name }}</a></li> 
+    <li><a href="{%url 'dept_detail' object.pk%}">{{ object.name }}</a></li>
     <li>{{ object.hod }}</li> 
     <hr/> 
     {% empty %} 

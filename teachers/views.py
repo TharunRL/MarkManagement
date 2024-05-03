@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView,TemplateView,ListView,DetailView,UpdateView,DeleteView
 
-from teachers.models import Department, Student
+from .models import *
 from .forms import AddDeptForm,AddClassForm,AddStudentForm,AddTeacherForm
 from django.urls import reverse_lazy
 # Create your views here.
@@ -63,10 +63,55 @@ class StudUpdateView(UpdateView):
     model=Student
     fields='__all__'
     template_name="manage/update.html"
-    success_url= reverse_lazy('department')
+    success_url= reverse_lazy('student')
     
 class StudDeleteView(DeleteView):
     model=Student
     template_name="manage/delete.html"
-    success_url= reverse_lazy('department')
-    
+    success_url= reverse_lazy('student')
+
+
+class TeachView(ListView):
+    model = Teacher
+    template_name = 'manage/list.html'
+
+
+class TeachDetailView(DetailView):
+    model = Teacher
+    template_name = "manage/detail.html"
+
+
+class TeachUpdateView(UpdateView):
+    model = Teacher
+    fields = '__all__'
+    template_name = "manage/update.html"
+    success_url = reverse_lazy('teacher')
+
+
+class TeachDeleteView(DeleteView):
+    model = Teacher
+    template_name = "manage/delete.html"
+    success_url = reverse_lazy('teacher')
+
+
+class ClassView(ListView):
+    model = Classs
+    template_name = 'manage/list.html'
+
+
+class ClassDetailView(DetailView):
+    model = Classs
+    template_name = "manage/detail.html"
+
+
+class ClassUpdateView(UpdateView):
+    model = Classs
+    fields = '__all__'
+    template_name = "manage/update.html"
+    success_url = reverse_lazy('class')
+
+
+class ClassDeleteView(DeleteView):
+    model = Classs
+    template_name = "manage/delete.html"
+    success_url = reverse_lazy('class')
