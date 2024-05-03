@@ -8,22 +8,22 @@ from django.urls import reverse_lazy
 class AddDeptView(CreateView):
     form_class=AddDeptForm
     success_url= reverse_lazy('department')
-    template_name= 'manage/add_dept.html'
+    template_name= 'manage/add.html'
     
 class AddTeacherView(CreateView):
     form_class=AddTeacherForm
     success_url= reverse_lazy('home')
-    template_name= 'manage/add_teacher.html'
+    template_name= 'manage/add.html'
     
 class AddClassView(CreateView):
     form_class=AddClassForm
     success_url= reverse_lazy('home')
-    template_name= 'manage/add_class.html'
+    template_name= 'manage/add.html'
     
 class AddStudentView(CreateView):
     form_class=AddStudentForm
     success_url= reverse_lazy('home')
-    template_name= 'manage/add_student.html'
+    template_name= 'manage/add.html'
     
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
@@ -34,39 +34,39 @@ def manage(request):
 
 class DeptView(ListView):
     model=Department
-    template_name='manage/department.html'
+    template_name='manage/list.html'
     
 class DeptDetailView(DetailView):
     model=Department
-    template_name="manage/dept-detail.html"
+    template_name="manage/detail.html"
     
 class DeptUpdateView(UpdateView):
     model=Department
     fields='__all__'
-    template_name="manage/dept-update.html"
+    template_name="manage/update.html"
     success_url= reverse_lazy('department')
     
 class DeptDeleteView(DeleteView):
     model=Department
-    template_name="manage/dept-delete.html"
+    template_name="manage/delete.html"
     success_url= reverse_lazy('department')
     
 class StudView(ListView):
     model=Student
-    template_name='manage/student.html'
+    template_name='manage/list.html'
     
 class StudDetailView(DetailView):
     model=Student
-    template_name="manage/student-detail.html"
+    template_name="manage/detail.html"
     
 class StudUpdateView(UpdateView):
     model=Student
     fields='__all__'
-    template_name="manage/student-update.html"
+    template_name="manage/update.html"
     success_url= reverse_lazy('department')
     
 class StudDeleteView(DeleteView):
     model=Student
-    template_name="manage/student-delete.html"
+    template_name="manage/delete.html"
     success_url= reverse_lazy('department')
     

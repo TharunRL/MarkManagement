@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Department{% endblock title %}
+{% block title %}List{% endblock title %}
 {% block content %}
 <ul> 
     {% for object in object_list %} 
@@ -7,7 +7,7 @@
     <li>{{ object.hod }}</li> 
     <hr/> 
     {% empty %} 
-    <li>No Department.</li> 
+    <li>No items.</li>
     {% endfor %} 
     <a href="{%url 'add_department'%}">add</a>
 </ul>
