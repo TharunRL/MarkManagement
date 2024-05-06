@@ -1,14 +1,18 @@
 {% extends "base.html" %}
+{% load teachers_extras %}
 {% block title %}List{% endblock title %}
 {% block content %}
 <ul> 
-    {% for object in object_list %} 
-    <li><a href="{%url 'dept_detail' object.pk%}">{{ object.name }}</a></li>
-    <li>{{ object.hod }}</li> 
+    {% for object in object_list %}
+    {% with request.build_absolute_uri|addstr:object.pk as detailurl %}
+    <li><a href={{detailurl}}>{{ object }}</a></li>
+    {%endwith%}
     <hr/> 
     {% empty %} 
     <li>No items.</li>
-    {% endfor %} 
-    <a href="{%url 'add_department'%}">add</a>
+    {% endfor %}
+    {% with request.build_absolute_uri|addstr:'add' as addurl %}
+    <a href={{addurl}}>add</a>
+    {%endwith%}
 </ul>
 {% endblock content %}

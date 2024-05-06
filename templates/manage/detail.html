@@ -1,10 +1,16 @@
 {% extends "base.html" %}
+{% load teachers_extras %}
 {% block title %}Dept-detail{% endblock title %}
 {% block content %}
-<ul> 
-    <li>{{ object.name }}</li> 
-    <li>{{ object.hod }}</li> 
-    <a href="{%url 'dept_update' object.pk %}">Update</a>
-    <a href="{%url 'dept_delete' object.pk %}">Delete</a>
+<ul>
+    {% for value in object.getvalues %}
+    {{ value }}
+    {% endfor %}
+    {% with request.build_absolute_uri|addstr:"update" as updateurl %}
+    <a href={{updateurl}}>Update</a>
+    {% endwith %}
+    {% with request.build_absolute_uri|addstr:"delete" as deleteurl %}
+    <a href={{deleteurl}}>Delete</a>
+    {%endwith%}
 </ul>
 {% endblock content %}
