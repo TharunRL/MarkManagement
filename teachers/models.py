@@ -14,14 +14,6 @@ class Department(models.Model):
         return self.name
     def getvalues(self):
         return list(vars(self).values())[2:]
-    def update(self):
-        return "dept_update"
-    def delt(self):
-        return "dept_delete"
-    def detail(self):
-        return "dept_detail"
-    def add(self):
-        return "dept_add"
     
 class Teacher(User):
     dept=models.ForeignKey(Department,on_delete=models.SET_NULL,null=True)
@@ -33,14 +25,6 @@ class Teacher(User):
         return self.username
     def getvalues(self):
         return list(vars(self).values())[2:]
-    def update(self):
-        return 'teacb_update'
-    def delt(self):
-        return 'teach_delete'
-    def detail(self):
-        return 'teach_detail'
-    def add(self):
-        return 'teach_add'
     
 class Classs(models.Model):
     dept=models.ForeignKey(Department,on_delete=models.CASCADE)
@@ -52,14 +36,6 @@ class Classs(models.Model):
         return self.dept.name +"-"+self.sec
     def getvalues(self):
         return list(vars(self).values())[2:]
-    def update(self):
-        return 'class_update'
-    def delt(self):
-        return 'class_delete'
-    def detail(self):
-        return 'class_detail'
-    def add(self):
-        return 'class_add'
 
 class Student(User):
     rollno=models.IntegerField(primary_key=True)
@@ -71,11 +47,3 @@ class Student(User):
         return self.username
     def getvalues(self):
         return list(vars(self).values())[2:]
-    def update(self):
-        return 'stud_update'
-    def delt(self):
-        return 'stud_delete'
-    def detail(self):
-        return 'stud_detail'
-    def add(self):
-        return 'stud_add'
